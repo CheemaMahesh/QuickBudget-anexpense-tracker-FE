@@ -15,3 +15,25 @@ data: {
 export interface TokenInterface {
     token: string
 }
+
+export interface Data {
+    exprenses?:{
+        createdAt?: string;
+        value?: number;
+        description?: string;
+        id?: string;
+        type?: string;
+    } [];
+    balance?: number;
+    totalCredit?: number;
+    totalDebit?: number;
+    name?: string;
+}
+
+export interface exprenses{
+    createdAt?: string;
+    value?: number;
+    description?: string;
+    id?: string;
+    type?: string;
+}
