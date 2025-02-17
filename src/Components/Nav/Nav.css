@@ -1,0 +1,18 @@
+.nav_root{
+background: var(--Neutral-White, #FFF);
+box-shadow: 0px 2.784px 5.569px 0px rgba(171, 190, 209, 0.40);
+}
+.qb_button{
+    padding: 5px 10px;
+    border-radius: 6px;
+  background: #E48700;
+  box-shadow: 0px 4px 19px 0px rgba(119, 147, 65, 0.30);
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.qb_button:active{
+    box-shadow: 0px 12px 19px 0px #E48700;
+    transform: translateY(2px);
+}
