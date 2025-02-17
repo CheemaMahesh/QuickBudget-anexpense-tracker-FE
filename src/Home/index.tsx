@@ -1,20 +1,9 @@
 import { useEffect, useState } from "react";
 import useAuth from "../Auth/hooks/useAuth";
 import Nav from "../Components/Nav";
-import { NavContext } from '../Utils/contexts';
-
-interface Data {
-    exprenses?:{
-        createdAt?: string;
-        value?: number;
-        description?: string;
-        id?: string;
-        type?: string;
-    } [];
-    balance?: number;
-    totalCredit?: number;
-    totalDebit?: number;
-}
+import { HomeContext } from '../Utils/contexts';
+import Card from "../Components/Card";
+import { Data } from "../Utils/types";
 
 const Home = () => {
     const { getAllExpenses } = useAuth();
@@ -34,7 +23,6 @@ const Home = () => {
         }
     };
 
-    console.log("currentData", currentData);
     useEffect(() => {
         const currenttoken = localStorage.getItem("QB-Token") as string;
         if (currenttoken) {
@@ -46,11 +34,13 @@ const Home = () => {
     }, []);
     return (
         <div className="h-screen w-screen bg-[#F5F7FA]">
-            <NavContext value={{
+            <HomeContext.Provider value={{
                 handleLogout,
+                currentData,
             }}>
             <Nav />
-            </NavContext>
+            <Card />
+            </HomeContext.Provider>
         </div>
     );
 }

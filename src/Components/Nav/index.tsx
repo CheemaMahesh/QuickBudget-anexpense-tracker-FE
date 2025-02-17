@@ -1,14 +1,14 @@
 import React from "react";
 import './Nav.css';
 import Logo from '../../assets/logo.svg';
-import { NavContext } from "../../Utils/contexts";
+import { HomeContext } from "../../Utils/contexts";
 
 interface NavProps {
     id?: string;
 }
 
 const Nav: React.FC<NavProps> = () => {
-    const { handleLogout } = React.useContext(NavContext);
+    const { handleLogout } = React.useContext(HomeContext);
     return (
         <section className="nav_root h-[60px] flex px-4 justify-between items-center">
             <div className="flex items-center">
