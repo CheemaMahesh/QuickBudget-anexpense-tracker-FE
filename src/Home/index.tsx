@@ -30,7 +30,6 @@ const Home = () => {
         } else {
             window.location.href = "/signin";
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <div className="h-screen w-screen bg-[#F5F7FA]">

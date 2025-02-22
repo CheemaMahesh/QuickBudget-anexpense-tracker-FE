@@ -28,10 +28,25 @@ const useAuth = () => {
         return res;
     }
 
+    const createAnExpense = async ({token, value, description, type}: { token: string, value: number, description: string, type: string}) => {
+        const res = await axios.post("http://localhost:4001/create-expense", {
+            headers: {
+                token,
+            },
+            data: {
+                value,
+                description,
+                type,
+            },
+        });
+        return res;
+    };
+
         return {
             signup,
             signin,
             getAllExpenses,
+            createAnExpense,
         };
 }
 
